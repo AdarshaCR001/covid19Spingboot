@@ -25,17 +25,28 @@ public class Covid19Controller {
 	@Autowired
 	private Manager manager;
 
+	private List<UserSymptoms> details;
+
+
 	@PostMapping("/usersymptoms")
 	public ResponseEntity<List<UserSymptoms>> userSymptoms(@RequestBody SymDetails symdetails) {
 		System.out.println(symdetails.getDate());
-		return ResponseEntity.ok(manager.save(symdetails));
+
+			return ResponseEntity.ok(manager.save(symdetails));
+
 
 	}
 
 	@PostMapping("/getsymptoms")
 	public ResponseEntity<List<UserSymptoms>> getHistory(@RequestBody UserDetails users) {
-
-		return ResponseEntity.ok(manager.get(users));
+		details=manager.get(users);
+		if(details==null) {
+			return ResponseEntity.noContent().build();
+		}
+		else {
+			return ResponseEntity.ok(manager.get(users));
+		}
+		
 
 	}
 

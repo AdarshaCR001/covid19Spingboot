@@ -2,6 +2,7 @@ package com.covid19logger.Manager;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ public class Covid19Manager implements Manager {
 	@Override
 	public List<UserSymptoms> save(SymDetails symdetails) {
 		
-		date2=symdetails.getDate().plusDays(1);
+		date2=symdetails.getDate();
 		
 		userdetails=symdetails.getuser();
 		usersym=symdetails.getSym();
