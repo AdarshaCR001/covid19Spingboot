@@ -26,6 +26,12 @@ public class Covid19Controller {
 	private Manager manager;
 
 	private List<UserSymptoms> details;
+	
+	@GetMapping("/")
+	public String index() {
+
+	    return "This is done by Navneeth alone";
+	}
 
 
 	@PostMapping("/usersymptoms")
