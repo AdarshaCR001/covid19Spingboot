@@ -1,4 +1,4 @@
-package com.covid19logger.Service;
+package com.covid19logger.service;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -14,7 +14,6 @@ public interface UserService {
 	public UserSymptoms save(UserSymptoms sym);
 	public Optional<UserDetails> findById(long id);
 	public boolean find(long userID);
-	public Optional<UserSymptoms> SfindById(long userID);
 	public UserSymptoms findbyUseridAndDate(long userID, LocalDate date2);
 	
 
