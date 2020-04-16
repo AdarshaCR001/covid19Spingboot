@@ -1,10 +1,6 @@
 package com.covid19logger.model;
 
 import java.time.LocalDate;
-import java.util.Date;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SymDetails {
 	private UserSymptoms sym;

@@ -1,23 +1,12 @@
 package com.covid19logger.model;
 
 import java.time.LocalDate;
-import java.util.Date;
-
-import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.hibernate.annotations.ManyToAny;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -150,9 +139,18 @@ public class UserSymptoms {
 
 	@Override
 	public String toString() {
-		return "UserSymptoms [Runny_Nose=" + Runny_Nose + ", Breathing_Diffculty=" + Breathing_Diffculty
-				+ ", Dry_Cough=" + Dry_Cough + ", Tiredness=" + Tiredness + ", Sore_throat=" + Sore_throat
-				+ ", Body_ache=" + Body_ache + ", Fever=" + Fever + "]";
+		return "UserSymptoms [id=" + id + ", userID=" + userID + ", date=" + date + ", Runny_Nose=" + Runny_Nose
+				+ ", Breathing_Diffculty=" + Breathing_Diffculty + ", Dry_Cough=" + Dry_Cough + ", Tiredness="
+				+ Tiredness + ", Sore_throat=" + Sore_throat + ", Body_ache=" + Body_ache + ", Fever=" + Fever + "]";
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 
 }
