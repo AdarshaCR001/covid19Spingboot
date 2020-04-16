@@ -1,10 +1,10 @@
-package com.covid19logger.model;
+package com.covid19logger.dto;
 
 import java.time.LocalDate;
 
 public class SymDetails {
-	private UserSymptoms sym;
-	private UserDetails user;
+	private SymptomsDto sym;
+	private DetailsDto user;
 	private LocalDate date;
 	public LocalDate getDate() {
 		return date;
@@ -12,16 +12,16 @@ public class SymDetails {
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	public UserSymptoms getSym() {
+	public SymptomsDto getSym() {
 		return sym;
 	}
-	public void setSym(UserSymptoms sym) {
+	public void setSym(SymptomsDto sym) {
 		this.sym = sym;
 	}
-	public UserDetails getuser() {
+	public DetailsDto getUser() {
 		return user;
 	}
-	public void setuser(UserDetails user) {
+	public void setUser(DetailsDto user) {
 		this.user = user;
 	}
 	@Override

@@ -1,4 +1,4 @@
-package com.covid19logger.Dao;
+package com.covid19logger.dao;
 
 import java.time.LocalDate;
 import java.util.Optional;

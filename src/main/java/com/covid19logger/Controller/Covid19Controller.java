@@ -1,4 +1,4 @@
-package com.covid19logger.Controller;
+package com.covid19logger.controller;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.covid19logger.Manager.Manager;
-import com.covid19logger.model.SymDetails;
-import com.covid19logger.model.UserDetails;
+
+import com.covid19logger.dto.DetailsDto;
+import com.covid19logger.dto.SymDetails;
+import com.covid19logger.manager.Manager;
 import com.covid19logger.model.UserSymptoms;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -18,12 +19,12 @@ public class Covid19Controller {
 	@Autowired
 	private Manager manager;
 
-	private List<UserSymptoms> details;
+
 
 
 	@PostMapping("/usersymptoms")
 	public ResponseEntity<UserSymptoms> userSymptoms(@RequestBody SymDetails symdetails) {
-		System.out.println(symdetails.getDate());
+
 
 			return ResponseEntity.ok(manager.save(symdetails));
 
@@ -31,8 +32,8 @@ public class Covid19Controller {
 	}
 
 	@PostMapping("/getsymptoms")
-	public ResponseEntity<List<UserSymptoms>> getHistory(@RequestBody UserDetails users) {
-		details=manager.get(users);
+	public ResponseEntity<List<UserSymptoms>> getHistory(@RequestBody DetailsDto users) {
+		List<UserSymptoms> details=manager.get(users);
 		if(details==null) {
 			return ResponseEntity.noContent().build();
 		}

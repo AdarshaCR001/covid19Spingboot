@@ -1,11 +1,12 @@
-package com.covid19logger.Service;
+package com.covid19logger.service;
 
 import java.time.LocalDate;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.covid19logger.Dao.SymptomsDao;
-import com.covid19logger.Dao.UserDao;
+
+import com.covid19logger.dao.SymptomsDao;
+import com.covid19logger.dao.UserDao;
 import com.covid19logger.model.UserDetails;
 import com.covid19logger.model.UserSymptoms;
 
@@ -38,12 +39,6 @@ public class UserServiceImpl implements UserService {
 	public boolean find(long userID) {
 		return dao.existsById(userID);
 	}
-
-	@Override
-	public Optional<UserSymptoms> SfindById(long userID) {
-		return symDao.findByUserID(userID);
-		}
-
 
 	@Override
 	public UserSymptoms findbyUseridAndDate(long userID, LocalDate date2) {
