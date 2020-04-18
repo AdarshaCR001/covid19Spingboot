@@ -1,19 +1,17 @@
-package com.covid19logger.Manager;
+package com.covid19logger.manager;
 
-import java.time.LocalDate;
+
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
-
-import com.covid19logger.model.SymDetails;
-import com.covid19logger.model.UserDetails;
+import com.covid19logger.dto.DetailsDto;
+import com.covid19logger.dto.SymDetails;
 import com.covid19logger.model.UserSymptoms;
 
 public interface Manager {
 
-	List<UserSymptoms> save(SymDetails symdetails);
+	UserSymptoms save(SymDetails symdetails);
 
-	List<UserSymptoms> get(UserDetails users);
+	List<UserSymptoms> get(DetailsDto users);
 	
 	
 

@@ -1,27 +1,13 @@
 package com.covid19logger.model;
 
 import java.time.LocalDate;
-import java.util.Date;
-
-import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.ManyToAny;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
-@JsonPropertyOrder
 @Entity
 @Table(name = "symptoms")
 public class UserSymptoms {
@@ -50,109 +36,104 @@ public class UserSymptoms {
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	@JsonProperty
+
 	@Column(name = "runny_nose")
-	private int Runny_Nose;
+	private int runnyNose;
 
-	@JsonProperty
+
 	@Column(name = "breathing_diffculty")
-	private int Breathing_Diffculty;
-	@JsonProperty
+	private int breathingDiffculty;
+
 	@Column(name = "dry_cough")
-	private int Dry_Cough;
-	@JsonProperty
+	private int dryCough;
+
 	@Column(name = "tiredness")
-	private int Tiredness;
-	@JsonProperty
+	private int tiredness;
+
 	@Column(name = "sore_throat")
-	private int Sore_throat;
-	@JsonProperty
+	private int soreThroat;
+
 	@Column(name = "body_ache")
-	private int Body_ache;
-	@JsonProperty
+	private int bodyAche;
+
 	@Column(name = "fever")
-	private int Fever;
+	private int fever;
 
-	/*
-	 * public UserDetails getUserdet() { return userdet; } public void
-	 * setUserdet(UserDetails userdet) { this.userdet = userdet; }
-	 */
 
-	@JsonProperty
-	public int getRunny_Nose() {
-		return Runny_Nose;
+	
+	
+
+	public int getRunnyNose() {
+		return runnyNose;
 	}
 
-	@JsonProperty
-	public void setRunny_Nose(int runny_Nose) {
-		Runny_Nose = runny_Nose;
+	public void setRunnyNose(int runnyNose) {
+		this.runnyNose = runnyNose;
 	}
 
-	@JsonProperty
-	public int getBreathing_Diffculty() {
-		return Breathing_Diffculty;
+	public int getBreathingDiffculty() {
+		return breathingDiffculty;
 	}
 
-	@JsonProperty
-	public void setBreathing_Diffculty(int breathing_Diffculty) {
-		Breathing_Diffculty = breathing_Diffculty;
+	public void setBreathingDiffculty(int breathingDiffculty) {
+		this.breathingDiffculty = breathingDiffculty;
 	}
 
-	@JsonProperty
-	public int getDry_Cough() {
-		return Dry_Cough;
+	public int getDryCough() {
+		return dryCough;
 	}
 
-	@JsonProperty
-	public void setDry_Cough(int dry_Cough) {
-		Dry_Cough = dry_Cough;
+	public void setDryCough(int dryCough) {
+		this.dryCough = dryCough;
 	}
 
-	@JsonProperty
 	public int getTiredness() {
-		return Tiredness;
+		return tiredness;
 	}
 
-	@JsonProperty
 	public void setTiredness(int tiredness) {
-		Tiredness = tiredness;
+		this.tiredness = tiredness;
 	}
 
-	@JsonProperty
-	public int getSore_throat() {
-		return Sore_throat;
+	public int getSoreThroat() {
+		return soreThroat;
 	}
 
-	@JsonProperty
-	public void setSore_throat(int sore_throat) {
-		Sore_throat = sore_throat;
+	public void setSoreThroat(int soreThroat) {
+		this.soreThroat = soreThroat;
 	}
 
-	@JsonProperty
-	public int getBody_ache() {
-		return Body_ache;
+	public int getBodyAche() {
+		return bodyAche;
 	}
 
-	@JsonProperty
-	public void setBody_ache(int body_ache) {
-		Body_ache = body_ache;
+	public void setBodyAche(int bodyAche) {
+		this.bodyAche = bodyAche;
 	}
 
-	@JsonProperty
 	public int getFever() {
-		return Fever;
+		return fever;
 	}
 
-	@JsonProperty
 	public void setFever(int fever) {
-		Fever = fever;
+		this.fever = fever;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	@Override
 	public String toString() {
-		return "UserSymptoms [Runny_Nose=" + Runny_Nose + ", Breathing_Diffculty=" + Breathing_Diffculty
-				+ ", Dry_Cough=" + Dry_Cough + ", Tiredness=" + Tiredness + ", Sore_throat=" + Sore_throat
-				+ ", Body_ache=" + Body_ache + ", Fever=" + Fever + "]";
+		return "UserSymptoms [id=" + id + ", userID=" + userID + ", date=" + date + ", runnyNose=" + runnyNose
+				+ ", breathingDiffculty=" + breathingDiffculty + ", dryCough=" + dryCough + ", tiredness=" + tiredness
+				+ ", soreThroat=" + soreThroat + ", bodyAche=" + bodyAche + ", fever=" + fever + "]";
 	}
+	
+		
 
 }
