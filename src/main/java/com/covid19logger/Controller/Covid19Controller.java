@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +20,13 @@ public class Covid19Controller {
 	@Autowired
 	private Manager manager;
 
+private List<UserSymptoms> details;
+	
+	@GetMapping("/")
+	public String index() {
 
+	    return "This is done by Navneeth alone";
+	}
 
 
 	@PostMapping("/usersymptoms")
